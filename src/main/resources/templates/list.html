@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head th:replace="base :: headstuff">
+    <meta charset="UTF-8"/>
+    <title>Bullhorn</title>
+</head>
+<body>
+<a href="/add">leave a message</a><br />
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Message</th>
+        <th>Posted Date</th>
+    </tr>
+    <tr th:each="message : ${messages}">
+        <td th:text="${message.name}"></td>
+        <td th:text="${message.statement}"></td>
+        <td th:text="${message.createdDate}"></td>
+    </tr>
+</table>
+
+</body>
+</html>
